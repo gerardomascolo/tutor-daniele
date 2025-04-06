@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor di Daniele</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f9ff;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      color: #003366;
+      text-align: center;
+    }
+    .box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Benvenuto Daniele!</h1>
+  <div class="box">
+    <p>Scrivi qui sotto la tua domanda su scuola, studio o curiosità. Ti risponderò in modo semplice e chiaro.</p>
+    <label for="materia">Materia (Italiano, Matematica, Inglese, ecc):</label>
+    <input type="text" id="materia" placeholder="Es. Matematica">
+
+    <label for="domanda">La tua domanda:</label>
+    <textarea id="domanda" rows="4" placeholder="Scrivi qui la tua domanda..."></textarea>
+
+    <button onclick="inviaDomanda()">Invia</button>
+
+    <div id="risposta" style="margin-top: 30px; font-weight: bold;"></div>
+  </div>
+
+  <script>
+    function inviaDomanda() {
+      const materia = document.getElementById("materia").value;
+      const domanda = document.getElementById("domanda").value;
+      const rispostaDiv = document.getElementById("risposta");
+
+      if (!materia || !domanda) {
+        rispostaDiv.innerText = "Per favore, compila tutti i campi.";
+        return;
+      }
+
+      rispostaDiv.innerText = `Grazie Daniele! Sto pensando a una risposta per la tua domanda su "${materia}". Presto ti risponderò!`;
+    }
+  </script>
+</body>
+</html>
